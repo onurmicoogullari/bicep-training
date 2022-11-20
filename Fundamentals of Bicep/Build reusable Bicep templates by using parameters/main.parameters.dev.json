@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "pAppServicePlanSku": {
+            "value": {
+                "name": "F1",
+                "tier": "Free"
+            }
+        },
+        "pSqlDatabaseSku": {
+            "value": {
+                "name": "Standard",
+                "tier": "Standard"
+            }
+        },
+        "pSqlServerAdministratorLogin": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/9ec05434-e059-42b3-83c5-ca8b8d358bdb/resourceGroups/learn-9d7fe139-223c-40b8-8355-992dc369453c/providers/Microsoft.KeyVault/vaults/kv-ms-toys-01"
+                },
+                "secretName": "sqlServerAdministratorLogin"
+            }
+        },
+        "pSqlServerAdministratorPassword": {
+            "reference": {
+                "keyVault": {
+                    "id": "/subscriptions/9ec05434-e059-42b3-83c5-ca8b8d358bdb/resourceGroups/learn-9d7fe139-223c-40b8-8355-992dc369453c/providers/Microsoft.KeyVault/vaults/kv-ms-toys-01"
+                },
+                "secretName": "sqlServerAdministratorPassword"
+            }
+        }
+    }
+}
